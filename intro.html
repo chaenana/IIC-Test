@@ -64,7 +64,7 @@
 
         // CSV 파일을 읽어와서 데이터를 파싱하는 함수
         function loadCSVData() {
-            fetch('Sheet1.csv')  // CSV 파일 경로
+            fetch('https://chaenana.github.io/IIC-Test/Sheet1.csv')  // CSV 파일 경로
                 .then(response => response.text())
                 .then(text => {
                     const rows = text.split('\n');
