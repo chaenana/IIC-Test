@@ -25,23 +25,8 @@
     </div>
 
     <!-- 메인 콘텐츠 -->
-    <div class="grid-container">
-        <div class="container" id="con1" onclick="openSidePanel('workflow1')">
-            <img id="img_con1" src="https://chaenana.github.io/IIC-Test/Capture.PNG" alt="Workflow Thumbnail">
-            <button>Basic Work Flow with MetaData</button>
-        </div>
-        <div class="container" id="con2" onclick="openSidePanel('workflow2')">
-            <img id="img_con2" src="https://via.placeholder.com/300x200" alt="Workflow Thumbnail">
-            <button>Basic Work Flow with MetaData</button>
-        </div>
-        <div class="container" id="con3" onclick="openSidePanel('workflow3')">
-            <img id="img_con3" src="https://via.placeholder.com/300x200" alt="Workflow Thumbnail">
-            <button>Basic Work Flow with MetaData</button>
-        </div>
-        <div class="container" id="con4" onclick="openSidePanel('workflow4')">
-            <img id="img_con4" src="https://via.placeholder.com/300x200" alt="Workflow Thumbnail">
-            <button>Basic Work Flow with MetaData</button>
-        </div>
+    <div class="grid-container" id="gridContainer">
+        <!-- 컨텐츠는 JavaScript에서 동적으로 생성됨 -->
     </div>
 
     <!-- 오른쪽에서 밀고 들어오는 패널 -->
@@ -53,7 +38,6 @@
         </button>
         <button class="close-btn-sidePanel" onclick="closeSidePanel()">닫기</button>
         <img id="sidePanel_img" src="https://via.placeholder.com/600x400" class="sidePanel_Thumbs"> <!-- 이미지 중앙 정렬 -->
-
         <p class="Description_Detail" id="Description_Detail"></p> <!-- Description을 동적으로 삽입할 부분 -->
     </div>
 
@@ -73,11 +57,12 @@
                         if (columns.length >= 3) {
                             workflowData.push({
                                 id: columns[0],  // ID (예: workflow1)
-                                link: columns[1],  // Link (이미지 URL)
+                                link: columns[1],  // 이미지 링크
                                 description: columns[2]  // Description
                             });
                         }
                     }
+                    createContainers(); // CSV 데이터 로드 후 container 생성
                 })
                 .catch(error => console.error('Error loading CSV data: ', error));
         }
@@ -89,20 +74,47 @@
                 // Description 업데이트
                 document.getElementById('Description_Detail').innerText = workflow.description;
 
-                // 이미지 업데이트
+                // 이미지 업데이트 (sidePanel 및 main grid 내의 이미지)
                 document.getElementById('sidePanel_img').src = workflow.link;
-
-                // main 컨테이너 이미지도 업데이트
-                document.getElementById('img_con1').src = workflow.link;
             } else {
                 document.getElementById('Description_Detail').innerText = 'No description available for this workflow.';
             }
         }
 
-        // 각 버튼 클릭 시, 해당 ID에 맞는 Description과 이미지를 로드
+        // 컨테이너 동적 생성
+        function createContainers() {
+            const gridContainer = document.getElementById('gridContainer');
+            gridContainer.innerHTML = '';  // 기존 내용을 지움
+
+            // workflowData 배열의 각 항목을 기반으로 container 생성
+            workflowData.forEach(workflow => {
+                // div container 생성
+                const container = document.createElement('div');
+                container.classList.add('container');
+                container.id = 'con_' + workflow.id;
+                container.onclick = () => openSidePanel(workflow.id);
+
+                // 이미지와 버튼 추가
+                const img = document.createElement('img');
+                img.src = workflow.link;
+                img.alt = workflow.id + " Thumbnail";
+                img.id = "img_" + workflow.id;
+
+                const button = document.createElement('button');
+                button.innerText = 'Basic Work Flow with MetaData';
+
+                container.appendChild(img);
+                container.appendChild(button);
+
+                // gridContainer에 추가
+                gridContainer.appendChild(container);
+            });
+        }
+
+        // Description을 로드하는 함수
         function openSidePanel(workflowId) {
             document.getElementById('sidePanel').classList.add('open');
-            loadDescriptionAndImage(workflowId);  // ID에 맞는 Description과 이미지 로드
+            loadDescriptionAndImage(workflowId);  // ID에 맞는 Description과 이미지를 로드
         }
 
         // 오른쪽에서 밀고 들어오는 패널 닫기
