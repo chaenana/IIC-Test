@@ -27,15 +27,19 @@
     <!-- 메인 콘텐츠 -->
     <div class="grid-container">
         <div class="container" id="con1" onclick="openSidePanel('workflow1')">
-            <img id="img_con1" src="http://via.placeholder.com/300x200" alt="Workflow Thumbnail">
+            <img id = "img_con1" src="https://chaenana.github.io/IIC-Test/Capture.PNG" alt="Workflow Thumbnail">
             <button>Basic Work Flow with MetaData</button>
         </div>
         <div class="container" id="con2" onclick="openSidePanel('workflow2')">
-            <img id="img_con2" src="http://via.placeholder.com/300x200" alt="Workflow Thumbnail">
+            <img id = "img_con2" src="https://via.placeholder.com/300x200" alt="Workflow Thumbnail">
             <button>Basic Work Flow with MetaData</button>
         </div>
         <div class="container" id="con3" onclick="openSidePanel('workflow3')">
-            <img id="img_con3" src="http://via.placeholder.com/300x200" alt="Workflow Thumbnail">
+            <img id = "img_con3"src="https://via.placeholder.com/300x200" alt="Workflow Thumbnail">
+            <button>Basic Work Flow with MetaData</button>
+        </div>
+        <div class="container" id="con4" onclick="openSidePanel('workflow4')">
+            <img id = "img_con4" src="https://via.placeholder.com/300x200" alt="Workflow Thumbnail">
             <button>Basic Work Flow with MetaData</button>
         </div>
     </div>
@@ -48,61 +52,79 @@
                 Download WorkFlow
         </button>
         <button class="close-btn-sidePanel" onclick="closeSidePanel()">닫기</button>
-        <img src="http://via.placeholder.com/600x400" class="sidePanel_Thumbs"> <!-- 이미지 중앙 정렬 -->
+        <img src="https://via.placeholder.com/600x400" class="sidePanel_Thumbs"> <!-- 이미지 중앙 정렬 -->
 
         <p class="Description_Detail" id="Description_Detail"></p> <!-- Description을 동적으로 삽입할 부분 -->
     </div>
 
     <!-- JavaScript로 사이드바 열고 닫기 -->
     <script>
-        const csvData = [
-            { id: 'workflow1', link: 'https://via.placeholder.com/300x200', description: 'Description for workflow1' },
-            { id: 'workflow2', link: 'https://via.placeholder.com/300x200', description: 'Description for workflow2' },
-            { id: 'workflow3', link: 'https://via.placeholder.com/300x200', description: 'Description for workflow3' }
-        ];
+        // CSV 데이터를 담을 배열
+        let workflowData = [];
 
-        // CSV 데이터를 로드하여 Description과 이미지를 업데이트하는 함수
-        function openSidePanel(workflowId) {
-            // CSV 데이터에서 해당 ID 찾기
-            const selectedData = csvData.find(item => item.id === workflowId);
+        // CSV 파일을 읽어와서 데이터를 파싱하는 함수
+        function loadCSVData() {
+            fetch('https://chaenana.github.io/IIC-Test/Sheet1.csv')  // CSV 파일 경로
+                .then(response => response.text())
+                .then(text => {
+                    const rows = text.split('\n');
+                    for (let i = 1; i < rows.length; i++) {
+                        const columns = rows[i].split(',');
+                        if (columns.length >= 3) {
+                            workflowData.push({
+                                id: columns[0],  // ID (예: workflow1)
+                                description: columns[2]  // Description
+                            });
+                        }
+                    }
+                })
+                .catch(error => console.error('Error loading CSV data: ', error));
+        }
 
-            if (selectedData) {
-                // sidePanel에 Description 업데이트
-                document.getElementById('Description_Detail').innerText = selectedData.description;
-
-                // con1, con2, con3의 이미지도 업데이트
-                document.getElementById(`img_con1`).src = selectedData.link;
+        // Description을 업데이트하는 함수
+        function loadDescriptionById(id) {
+            const workflow = workflowData.find(item => item.id === id);
+            if (workflow) {
+                document.getElementById('Description_Detail').innerText = workflow.description;
+            } else {
+                document.getElementById('Description_Detail').innerText = 'No description available for this workflow.';
             }
-            
-            document.getElementById("sidePanel").classList.add("open");
-            document.getElementById("sidebar").style.left = "-250px"; // 사이드바 닫기
-            document.querySelector(".grid-container").style.marginLeft = "0"; // 그리드 원위치
+        }
+
+        // 각 버튼 클릭 시, 해당 ID에 맞는 Description을 로드
+        function openSidePanel(workflowId) {
+            document.getElementById('sidePanel').classList.add('open');
+            loadDescriptionById(workflowId);  // ID에 맞는 Description 로드
+        }
+
+        // 오른쪽에서 밀고 들어오는 패널 닫기
+        function closeSidePanel() {
+            document.getElementById('sidePanel').classList.remove('open');
         }
 
         // 사이드바 열기
         function toggleSidebar() {
-            const sidebar = document.getElementById("sidebar");
-            const gridContainer = document.querySelector(".grid-container");
-
-            if (sidebar.style.left === "0px") {
-                sidebar.style.left = "-250px"; // 사이드바 닫기
-                gridContainer.style.marginLeft = "0"; // 그리드 원위치
+            const sidebar = document.getElementById('sidebar');
+            const gridContainer = document.querySelector('.grid-container');
+            if (sidebar.style.left === '0px') {
+                sidebar.style.left = '-250px'; // 사이드바 닫기
+                gridContainer.style.marginLeft = '0'; // 그리드 원위치
             } else {
-                sidebar.style.left = "0"; // 사이드바 열기
-                gridContainer.style.marginLeft = "250px"; // 그리드 이동
+                sidebar.style.left = '0'; // 사이드바 열기
+                gridContainer.style.marginLeft = '250px'; // 그리드 이동
             }
         }
 
         // 사이드바 닫기 (X 버튼)
         function closeSidebar() {
-            document.getElementById("sidebar").style.left = "-250px"; // 사이드바 닫기
-            document.querySelector(".grid-container").style.marginLeft = "0"; // 그리드 원위치
+            document.getElementById('sidebar').style.left = '-250px'; // 사이드바 닫기
+            document.querySelector('.grid-container').style.marginLeft = '0'; // 그리드 원위치
         }
 
-        // 오른쪽에서 밀고 들어오는 패널 닫기
-        function closeSidePanel() {
-            document.getElementById("sidePanel").classList.remove("open");
-        }
+        // 페이지 로드 시 CSV 데이터 로드
+        window.onload = function() {
+            loadCSVData();
+        };
     </script>
 
 </body>
