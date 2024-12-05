@@ -1,0 +1,206 @@
+        /* 기본 스타일 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* 햄버거 메뉴 */
+        .hamburger-menu {
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .hamburger-menu div {
+            background-color: #333;
+            height: 5px;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        /* 사이드바 */
+        .sidebar {
+            position: fixed;
+            left: -250px;
+            top: 0;
+            width: 250px;
+            height: 100vh;
+            background-color: #333;
+            color: white;
+            transition: 0.3s;
+            padding-top: 60px;
+            box-sizing: border-box;
+            z-index: 1001;
+            overflow-y: auto;
+        }
+
+        .sidebar a {
+            margin-top: 10px;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+            transition: background-color 0.3s;
+        }
+
+        .sidebar a:hover {
+            background-color: #575757;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 50px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* title */
+        .title {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 50px;
+            font-weight: bold;
+            z-index: 1002;
+            padding: 0 10px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* 그리드 컨테이너 */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            width: 100%;
+            transition: margin-left 0.3s;
+            margin-top: 70px;
+        }
+
+        /* 각 컨테이너 */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+        }
+
+        .container:hover {
+            opacity: 0.8;
+            background-color: rgba(88, 88, 88, 0.208);
+        }
+
+        .container img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+
+        .container button {
+            font-size: 16px;
+            padding: 10px 20px;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .container button:hover {
+            background-color: #0056b3;
+        }
+
+        /* 오른쪽에서 밀고 들어오는 div */
+        #sidePanel {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 100%;
+            height: 100vh;
+            background-color: #f4f4f9;
+            color: rgb(0, 0, 0);
+            transition: right 0.5s ease-in-out;
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 1002;
+        }
+
+        .close-btn-sidePanel {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+        }
+
+        #sidePanel.open {
+            right: 0;
+        }
+
+        /* 사이드 패널 안의 내용 스타일 */
+        #sidePanel h2 {
+            text-align: center;
+        }
+
+        #sidePanel p {
+            text-align: center;
+        }
+
+        #sidePanel button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        #sidePanel button:hover {
+            background-color: #0056b3;
+        }
+
+        /* 이미지를 중앙 정렬 */
+        .sidePanel_Thumbs {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .container_sidePanel {
+            align-items: center;
+            text-align: center;
+        }
