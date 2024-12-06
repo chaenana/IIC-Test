@@ -1,4 +1,4 @@
-ID,link,description,Title,SidePanel_WorkflowDescription
+ID,Img_link,description,Title,SidePanel_WorkflowDescription
 workflow1,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 1,Basic Work Flow with MetaData 1,SidePanel_WorkflowDescription 1
 workflow2,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 2,Basic Work Flow with MetaData 2,SidePanel_WorkflowDescription 2
 workflow3,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 3,Basic Work Flow with MetaData 3,SidePanel_WorkflowDescription 3
