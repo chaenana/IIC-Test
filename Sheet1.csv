@@ -1,18 +1,18 @@
-ID,link,description
-workflow1,https://chaenana.github.io/IIC-Test/Capture.PNG,Naver
-workflow2,https://chaenana.github.io/IIC-Test/Capture.PNG,Daum
-workflow3,https://chaenana.github.io/IIC-Test/Capture.PNG,Google
-workflow4,https://chaenana.github.io/IIC-Test/Capture.PNG,Google
-workflow5,https://chaenana.github.io/IIC-Test/Capture.PNG,Google
-workflow6,https://chaenana.github.io/IIC-Test/Capture.PNG,Google
-workflow7,https://chaenana.github.io/IIC-Test/Capture.PNG,Google
-workflow8,https://chaenana.github.io/IIC-Test/Capture.PNG,Google
-workflow9,https://chaenana.github.io/IIC-Test/Capture.PNG,Google
-workflow10,https://chaenana.github.io/IIC-Test/Capture.PNG,Google
-workflow11,https://chaenana.github.io/IIC-Test/Capture.PNG,Google
-workflow12,https://chaenana.github.io/IIC-Test/Capture.PNG,Google
-workflow13,https://chaenana.github.io/IIC-Test/Capture.PNG,Google
-workflow14,https://chaenana.github.io/IIC-Test/Capture.PNG,Google
-workflow15,https://chaenana.github.io/IIC-Test/Capture.PNG,Google
-workflow16,https://chaenana.github.io/IIC-Test/Capture.PNG,Google
-workflow17,https://chaenana.github.io/IIC-Test/Capture.PNG,Google
+ID,link,description,Title
+workflow1,https://chaenana.github.io/IIC-Test/Capture.PNG,Naver,Basic Work Flow with MetaData 1
+workflow2,https://chaenana.github.io/IIC-Test/Capture.PNG,Daum,Basic Work Flow with MetaData 2
+workflow3,https://chaenana.github.io/IIC-Test/Capture.PNG,Google,Basic Work Flow with MetaData 3
+workflow4,https://chaenana.github.io/IIC-Test/Capture.PNG,Google,Basic Work Flow with MetaData 4
+workflow5,https://chaenana.github.io/IIC-Test/Capture.PNG,Google,Basic Work Flow with MetaData 5
+workflow6,https://chaenana.github.io/IIC-Test/Capture.PNG,Google,Basic Work Flow with MetaData 6
+workflow7,https://chaenana.github.io/IIC-Test/Capture.PNG,Google,Basic Work Flow with MetaData 7
+workflow8,https://chaenana.github.io/IIC-Test/Capture.PNG,Google,Basic Work Flow with MetaData 8
+workflow9,https://chaenana.github.io/IIC-Test/Capture.PNG,Google,Basic Work Flow with MetaData 9
+workflow10,https://chaenana.github.io/IIC-Test/Capture.PNG,Google,Basic Work Flow with MetaData 10
+workflow11,https://chaenana.github.io/IIC-Test/Capture.PNG,Google,Basic Work Flow with MetaData 11
+workflow12,https://chaenana.github.io/IIC-Test/Capture.PNG,Google,Basic Work Flow with MetaData 12
+workflow13,https://chaenana.github.io/IIC-Test/Capture.PNG,Google,Basic Work Flow with MetaData 13
+workflow14,https://chaenana.github.io/IIC-Test/Capture.PNG,Google,Basic Work Flow with MetaData 14
+workflow15,https://chaenana.github.io/IIC-Test/Capture.PNG,Google,Basic Work Flow with MetaData 15
+workflow16,https://chaenana.github.io/IIC-Test/Capture.PNG,Google,Basic Work Flow with MetaData 16
+workflow17,https://chaenana.github.io/IIC-Test/Capture.PNG,Google,Basic Work Flow with MetaData 17

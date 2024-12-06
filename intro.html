@@ -48,18 +48,18 @@
 
         // CSV 파일을 읽어와서 데이터를 파싱하는 함수
         function loadCSVData() {
-            // fetch('https://chaenana.github.io/IIC-Test/Sheet1.csv')  // CSV 파일 경로
             fetch('https://chaenana.github.io/IIC-Test/Sheet1.csv')  // CSV 파일 경로
                 .then(response => response.text())
                 .then(text => {
                     const rows = text.split('\n');
                     for (let i = 1; i < rows.length; i++) {
                         const columns = rows[i].split(',');
-                        if (columns.length >= 3) {
+                        if (columns.length >= 4) {  // Title, Link, Description, ID (4개 열)
                             workflowData.push({
                                 id: columns[0],  // ID (예: workflow1)
                                 link: columns[1],  // 이미지 링크
-                                description: columns[2]  // Description
+                                description: columns[2],  // Description
+                                title: columns[3]  // Title
                             });
                         }
                     }
@@ -102,7 +102,7 @@
                 img.id = "img_" + workflow.id;
 
                 const button = document.createElement('button');
-                button.innerText = 'Basic Work Flow with MetaData';
+                button.innerText = workflow.title;  // Title로 버튼 텍스트 설정
 
                 container.appendChild(img);
                 container.appendChild(button);
