@@ -118,7 +118,7 @@
                 // 이미지 업데이트 (sidePanel 및 main grid 내의 이미지)
                 document.getElementById('sidePanel_img').src = workflow.img_link;
                 document.getElementById('SidePanel_Description').innerText = workflow.SidePanel_WorkflowDescription;
-                document.getElementById('download_sidePanel').onclick = () => window.open(workflow.link, '_blank'); // 링크 동작 설정
+                document.getElementById('download_sidePanel').onclick = () => window.open(workflow.download_link, '_blank'); // 링크 동작 설정
 
             } else {
                 document.getElementById('Description_Detail').innerText = 'No description available for this workflow.';
