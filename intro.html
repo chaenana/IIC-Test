@@ -8,6 +8,11 @@
 </head>
 <body>
 
+    <div id="loadingBar" class="loading-bar">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+
     <h1 class="title">AI R&D</h1>  <!-- 제목 위치가 그리드 바로 위로 변경됨 -->
 
     <!-- 햄버거 메뉴 -->
@@ -42,13 +47,31 @@
 
     <!-- JavaScript로 사이드바 열고 닫기 -->
     <script>
+
+
         // CSV 데이터를 담을 배열
         let workflowData = [];
         let roomLinks = []; // CSV 데이터를 저장할 배열
 
+        // 로딩 바 표시 함수
+        function showLoadingBar() {
+            const loadingBar = document.getElementById('loadingBar');
+            if (loadingBar) {
+                loadingBar.classList.add('show');
+            }
+        }
+
+        // 로딩 바 숨김 함수
+        function hideLoadingBar() {
+            const loadingBar = document.getElementById('loadingBar');
+            if (loadingBar) {
+                loadingBar.classList.remove('show');
+            }
+        }
 
         // CSV 파일을 읽어와서 데이터를 파싱하는 함수
         function loadCSVData() {
+            showLoadingBar(); // 로딩 바 표시
             fetch('https://chaenana.github.io/IIC-Test/Sheet1.csv')  // CSV 파일 경로
                 .then(response => response.text())
                 .then(text => {
@@ -68,9 +91,12 @@
                     }
                     createContainers(); // CSV 데이터 로드 후 container 생성
                 })
-                .catch(error => console.error('Error loading CSV data: ', error));
+                .catch(error => console.error('Error loading CSV data: ', error))
+                .finally(() => {
+                    // 로딩 바 숨김
+                    hideLoadingBar();
+                });
         }
-
 
         // CSV 데이터 로드
         function loadRoomLinks() {

@@ -223,3 +223,43 @@ body {
     align-items: center;
     text-align: center;
 }
+
+
+/* 로딩 바 스타일 */
+.loading-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1003; /* 사이드바, 패널 위로 올림 */
+    visibility: hidden; /* 기본적으로 숨김 */
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s ease;
+}
+
+/* 로딩 바 보이기 */
+.loading-bar.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 스피너 스타일 */
+.spinner {
+    border: 4px solid #f3f3f3; /* Light grey */
+    border-top: 4px solid #007BFF; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+/* 스피너 애니메이션 */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
