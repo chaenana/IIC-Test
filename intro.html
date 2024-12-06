@@ -19,9 +19,10 @@
 
     <!-- 사이드바 -->
     <div id="sidebar" class="sidebar">
-        <span class="close-btn" onclick="closeSidebar()">×</span>
+        <!-- <span class="close-btn" onclick="closeSidebar()">×</span>
         <a href="javascript:void(0);" onclick="window.open('http://172.10.3.141:8188', '_blank')">COMFYUI_ROOM 1</a>
-        <a href="javascript:void(0);" onclick="window.open('http://172.10.3.141:8189', '_blank')">COMFYUI_ROOM 2</a>
+        <a href="javascript:void(0);" onclick="window.open('http://172.10.3.141:8189', '_blank')">COMFYUI_ROOM 2</a> -->
+        <span class="close-btn" onclick="closeSidebar()">×</span>
     </div>
 
     <!-- 메인 콘텐츠 -->
@@ -45,6 +46,8 @@
     <script>
         // CSV 데이터를 담을 배열
         let workflowData = [];
+        let roomLinks = []; // CSV 데이터를 저장할 배열
+
 
         // CSV 파일을 읽어와서 데이터를 파싱하는 함수
         function loadCSVData() {
@@ -67,6 +70,42 @@
                 })
                 .catch(error => console.error('Error loading CSV data: ', error));
         }
+
+
+        // CSV 데이터 로드
+        function loadRoomLinks() {
+            // fetch('https://example.com/rooms.csv') // CSV 파일 경로
+            fetch('https://chaenana.github.io/IIC-Test/rooms.csv') // CSV 파일 경로
+                .then(response => response.text())
+                .then(text => {
+                    const rows = text.split('\n');
+                    for (let i = 1; i < rows.length; i++) {
+                        const columns = rows[i].split(',');
+                        if (columns.length >= 3) {
+                            roomLinks.push({
+                                id: columns[0],   // room ID
+                                link: columns[1], // 링크 URL
+                                title: columns[2] // 링크 제목
+                            });
+                        }
+                    }
+                    createSidebarLinks(); // 링크 생성
+                })
+                .catch(error => console.error('Error loading room links: ', error));
+        }
+
+        // 동적으로 사이드바에 링크 생성
+        function createSidebarLinks() {
+            const sidebar = document.getElementById('sidebar');
+            roomLinks.forEach(room => {
+                const linkElement = document.createElement('a');
+                linkElement.href = "javascript:void(0);"; // 기본 동작 방지
+                linkElement.onclick = () => window.open(room.link, '_blank'); // 링크 동작 설정
+                linkElement.innerText = room.title; // 링크 제목 설정
+                sidebar.appendChild(linkElement); // 사이드바에 추가
+            });
+        }
+
 
         // Description과 이미지 링크를 업데이트하는 함수
         function loadDescriptionAndImage(workflowId) {
@@ -147,6 +186,7 @@
         // 페이지 로드 시 CSV 데이터 로드
         window.onload = function() {
             loadCSVData();
+            loadRoomLinks();
         };
     </script>
 
