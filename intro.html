@@ -47,47 +47,26 @@
         let workflowData = [];
 
         // CSV 파일을 읽어와서 데이터를 파싱하는 함수
-        // function loadCSVData() {
-        //     fetch('https://chaenana.github.io/IIC-Test/Sheet1.csv')  // CSV 파일 경로
-        //         .then(response => response.text())
-        //         .then(text => {
-        //             const rows = text.split('\n');
-        //             for (let i = 1; i < rows.length; i++) {
-        //                 const columns = rows[i].split(',');
-        //                 if (columns.length >= 4) {  // Title, Link, Description, ID (4개 열)
-        //                     workflowData.push({
-        //                         id: columns[0],  // ID (예: workflow1)
-        //                         link: columns[1],  // 이미지 링크
-        //                         description: columns[2],  // Description
-        //                         title: columns[3]  // Title
-        //                     });
-        //                 }
-        //             }
-        //             createContainers(); // CSV 데이터 로드 후 container 생성
-        //         })
-        //         .catch(error => console.error('Error loading CSV data: ', error));
-        // }
-        async function loadCSVData() {
-            console.log("Start fetching data...");
-            try {
-                const response = await fetch('https://chaenana.github.io/IIC-Test/Sheet1.csv');
-                const text = await response.text();
-                const rows = text.split('\n');
-                for (let i = 1; i < rows.length; i++) {
-                    const columns = rows[i].split(',');
-                    if (columns.length >= 3) {
-                        workflowData.push({
-                            id: columns[0],
-                            description: columns[2]
-                        });
+        function loadCSVData() {
+            fetch('https://chaenana.github.io/IIC-Test/Sheet1.csv')  // CSV 파일 경로
+                .then(response => response.text())
+                .then(text => {
+                    const rows = text.split('\n');
+                    for (let i = 1; i < rows.length; i++) {
+                        const columns = rows[i].split(',');
+                        if (columns.length >= 4) {  // Title, Link, Description, ID (4개 열)
+                            workflowData.push({
+                                id: columns[0],  // ID (예: workflow1)
+                                link: columns[1],  // 이미지 링크
+                                description: columns[2],  // Description
+                                title: columns[3]  // Title
+                            });
+                        }
                     }
-                }
-                console.log("Data loaded.");
-            } catch (error) {
-                console.error('Error loading CSV data: ', error);
-            }
+                    createContainers(); // CSV 데이터 로드 후 container 생성
+                })
+                .catch(error => console.error('Error loading CSV data: ', error));
         }
-
 
         // Description과 이미지 링크를 업데이트하는 함수
         function loadDescriptionAndImage(workflowId) {
