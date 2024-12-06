@@ -31,8 +31,8 @@
 
     <!-- 오른쪽에서 밀고 들어오는 패널 -->
     <div id="sidePanel">
-        <h2>새로운 화면</h2>
-        <p>여기는 오른쪽에서 밀고 들어오는 새로운 div입니다.</p>
+        <h2 id="SidePanel_Title">새로운 화면</h2>
+        <p id = "SidePanel_Description">여기는 오른쪽에서 밀고 들어오는 새로운 div입니다.</p>
         <button class="download_sidePanel" onclick="window.open('http://172.10.0.152:5000/sharing/sXxbg1Ioe','_blank')">
                 Download WorkFlow
         </button>
@@ -74,9 +74,11 @@
             if (workflow) {
                 // Description 업데이트
                 document.getElementById('Description_Detail').innerText = workflow.description;
-
+                document.getElementById('SidePanel_Title').innerText = workflow.title;
                 // 이미지 업데이트 (sidePanel 및 main grid 내의 이미지)
                 document.getElementById('sidePanel_img').src = workflow.link;
+                document.getElementById('SidePanel_Description').innerText = workflow.SidePanel_WorkflowDescription;
+
             } else {
                 document.getElementById('Description_Detail').innerText = 'No description available for this workflow.';
             }
