@@ -34,20 +34,25 @@ body {
     border-radius: 5px;
 }
 
-/* 사이드바 */
+/* 사이드바 초기 상태 */
 .sidebar {
     position: fixed;
-    left: -250px;
     top: 0;
+    left: 0;
     width: 250px;
     height: 100vh;
     background-color: #333;
     color: white;
-    transition: 0.3s;
     padding-top: 60px;
     box-sizing: border-box;
     z-index: 1001;
     overflow-y: auto;
+    transition: transform 0.3s ease; /* 부드러운 애니메이션 */
+    transform: translateX(-250px); /* 화면 밖으로 숨김 */
+}
+
+.sidebar.open {
+    transform: translateX(0); /* 화면 안으로 이동 */
 }
 
 .sidebar a {
@@ -91,9 +96,14 @@ body {
     padding: 20px;
     max-width: 1200px;
     width: 100%;
-    margin-top: 30px;  /* 제목 아래에 그리드를 배치 */
+    margin-top: 30px; /* 제목 아래에 그리드를 배치 */
     margin-left: auto;
-    margin-right: auto;  /* 자동 마진을 사용하여 중앙 정렬 */
+    margin-right: auto; /* 자동 마진을 사용하여 중앙 정렬 */
+    transition: transform 0.3s ease;
+}
+
+.grid-container.shift {
+    transform: translateX(250px);
 }
 
 /* 각 컨테이너 */
@@ -136,6 +146,15 @@ body {
     background-color: #0056b3;
 }
 
+
+.container-title {
+    font-size: 15px;
+    font-weight: medium;
+    text-align: center;
+    margin-top: 5px; /* 이미지와 버튼 사이 간격 조정 */
+}
+
+
 /* 오른쪽에서 밀고 들어오는 div */
 #sidePanel {
     position: fixed;
@@ -145,7 +164,7 @@ body {
     height: 100vh;
     background-color: #f4f4f9;
     color: rgb(0, 0, 0);
-    transition: right 0.5s ease-in-out;
+    transition: right 0.1s ease-in-out;
     padding: 20px;
     box-sizing: border-box;
     z-index: 1002;
@@ -166,6 +185,7 @@ body {
 
 /* 사이드 패널 안의 내용 스타일 */
 #sidePanel h2 {
+    margin-top: 90px;
     text-align: center;
 }
 

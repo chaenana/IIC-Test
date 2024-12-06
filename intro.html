@@ -19,10 +19,8 @@
 
     <!-- 사이드바 -->
     <div id="sidebar" class="sidebar">
-        <!-- <span class="close-btn" onclick="closeSidebar()">×</span>
-        <a href="javascript:void(0);" onclick="window.open('http://172.10.3.141:8188', '_blank')">COMFYUI_ROOM 1</a>
-        <a href="javascript:void(0);" onclick="window.open('http://172.10.3.141:8189', '_blank')">COMFYUI_ROOM 2</a> -->
         <span class="close-btn" onclick="closeSidebar()">×</span>
+        <!-- 사이드바 내용 -->
     </div>
 
     <!-- 메인 콘텐츠 -->
@@ -137,19 +135,27 @@
                 container.classList.add('container');
                 container.id = 'con_' + workflow.id;
                 container.onclick = () => openSidePanel(workflow.id);
-
                 // 이미지와 버튼 추가
                 const img = document.createElement('img');
                 img.src = workflow.img_link;
                 img.alt = workflow.id + " Thumbnail";
                 img.id = "img_" + workflow.id;
 
+
+
+                // 타이틀 추가
+                const title = document.createElement('h3');
+                title.innerText = workflow.title; // workflow의 타이틀 추가
+                title.classList.add('container-title'); // CSS 클래스를 추가하여 스타일링 가능
+
+
                 const button = document.createElement('button');
-                button.innerText = workflow.title;  // Title로 버튼 텍스트 설정
-
+                // button.innerText = workflow.title;  // Title로 버튼 텍스트 설정
+                button.innerText = "View More";  // Title로 버튼 텍스트 설정
+                
                 container.appendChild(img);
+                container.appendChild(title); // 타이틀을 이미지 아래에 추가
                 container.appendChild(button);
-
                 // gridContainer에 추가
                 gridContainer.appendChild(container);
             });
@@ -157,6 +163,7 @@
 
         // Description을 로드하는 함수
         function openSidePanel(workflowId) {
+            closeSidebar();
             document.getElementById('sidePanel').classList.add('open');
             loadDescriptionAndImage(workflowId);  // ID에 맞는 Description과 이미지를 로드
         }
@@ -166,25 +173,28 @@
             document.getElementById('sidePanel').classList.remove('open');
         }
 
-        // 사이드바 열기
+        // 사이드바 열기 및 닫기
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
-            const gridContainer = document.querySelector('.grid-container');
-            if (sidebar.style.left === '0px') {
-                sidebar.style.left = '-250px'; // 사이드바 닫기
-                gridContainer.style.marginLeft = '0'; // 그리드 원위치
+
+            if (sidebar.classList.contains('open')) {
+                closeSidebar();
             } else {
-                sidebar.style.left = '0'; // 사이드바 열기
-                gridContainer.style.marginLeft = '250px'; // 그리드 이동
+                openSidebar();
             }
         }
 
-        // 사이드바 닫기 (X 버튼)
-        function closeSidebar() {
-            document.getElementById('sidebar').style.left = '-250px'; // 사이드바 닫기
-            document.querySelector('.grid-container').style.marginLeft = '0'; // 그리드 원위치
+        // 사이드바 열기
+        function openSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.add('open'); // 'open' 클래스 추가
         }
 
+        // 사이드바 닫기
+        function closeSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.remove('open'); // 'open' 클래스 제거
+        }
         // 페이지 로드 시 CSV 데이터 로드
         window.onload = function() {
             loadCSVData();
