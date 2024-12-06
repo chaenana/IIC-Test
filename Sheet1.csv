@@ -1,18 +1,18 @@
-ID,Img_link,description,Title,SidePanel_WorkflowDescription
-workflow1,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 1,Basic Work Flow with MetaData 1,SidePanel_WorkflowDescription 1
-workflow2,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 2,Basic Work Flow with MetaData 2,SidePanel_WorkflowDescription 2
-workflow3,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 3,Basic Work Flow with MetaData 3,SidePanel_WorkflowDescription 3
-workflow4,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 4,Basic Work Flow with MetaData 4,SidePanel_WorkflowDescription 4
-workflow5,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 5,Basic Work Flow with MetaData 5,SidePanel_WorkflowDescription 5
-workflow6,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 6,Basic Work Flow with MetaData 6,SidePanel_WorkflowDescription 6
-workflow7,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 7,Basic Work Flow with MetaData 7,SidePanel_WorkflowDescription 7
-workflow8,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 8,Basic Work Flow with MetaData 8,SidePanel_WorkflowDescription 8
-workflow9,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 9,Basic Work Flow with MetaData 9,SidePanel_WorkflowDescription 9
-workflow10,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 10,Basic Work Flow with MetaData 10,SidePanel_WorkflowDescription 10
-workflow11,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 11,Basic Work Flow with MetaData 11,SidePanel_WorkflowDescription 11
-workflow12,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 12,Basic Work Flow with MetaData 12,SidePanel_WorkflowDescription 12
-workflow13,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 13,Basic Work Flow with MetaData 13,SidePanel_WorkflowDescription 13
-workflow14,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 14,Basic Work Flow with MetaData 14,SidePanel_WorkflowDescription 14
-workflow15,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 15,Basic Work Flow with MetaData 15,SidePanel_WorkflowDescription 15
-workflow16,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 16,Basic Work Flow with MetaData 16,SidePanel_WorkflowDescription 16
-workflow17,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 17,Basic Work Flow with MetaData 17,SidePanel_WorkflowDescription 17
+ID,Img_link,description,Title,SidePanel_WorkflowDescription,download_link
+workflow1,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 1,Basic Work Flow with MetaData 1,SidePanel_WorkflowDescription 1,http://172.10.0.152:5000/sharing/sXxbg1Ioe
+workflow2,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 2,Basic Work Flow with MetaData 2,SidePanel_WorkflowDescription 2,http://172.10.0.152:5000/sharing/sXxbg1Ioe
+workflow3,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 3,Basic Work Flow with MetaData 3,SidePanel_WorkflowDescription 3,http://172.10.0.152:5000/sharing/sXxbg1Ioe
+workflow4,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 4,Basic Work Flow with MetaData 4,SidePanel_WorkflowDescription 4,http://172.10.0.152:5000/sharing/sXxbg1Ioe
+workflow5,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 5,Basic Work Flow with MetaData 5,SidePanel_WorkflowDescription 5,http://172.10.0.152:5000/sharing/sXxbg1Ioe
+workflow6,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 6,Basic Work Flow with MetaData 6,SidePanel_WorkflowDescription 6,http://172.10.0.152:5000/sharing/sXxbg1Ioe
+workflow7,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 7,Basic Work Flow with MetaData 7,SidePanel_WorkflowDescription 7,http://172.10.0.152:5000/sharing/sXxbg1Ioe
+workflow8,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 8,Basic Work Flow with MetaData 8,SidePanel_WorkflowDescription 8,http://172.10.0.152:5000/sharing/sXxbg1Ioe
+workflow9,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 9,Basic Work Flow with MetaData 9,SidePanel_WorkflowDescription 9,http://172.10.0.152:5000/sharing/sXxbg1Ioe
+workflow10,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 10,Basic Work Flow with MetaData 10,SidePanel_WorkflowDescription 10,http://172.10.0.152:5000/sharing/sXxbg1Ioe
+workflow11,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 11,Basic Work Flow with MetaData 11,SidePanel_WorkflowDescription 11,http://172.10.0.152:5000/sharing/sXxbg1Ioe
+workflow12,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 12,Basic Work Flow with MetaData 12,SidePanel_WorkflowDescription 12,http://172.10.0.152:5000/sharing/sXxbg1Ioe
+workflow13,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 13,Basic Work Flow with MetaData 13,SidePanel_WorkflowDescription 13,http://172.10.0.152:5000/sharing/sXxbg1Ioe
+workflow14,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 14,Basic Work Flow with MetaData 14,SidePanel_WorkflowDescription 14,http://172.10.0.152:5000/sharing/sXxbg1Ioe
+workflow15,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 15,Basic Work Flow with MetaData 15,SidePanel_WorkflowDescription 15,http://172.10.0.152:5000/sharing/sXxbg1Ioe
+workflow16,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 16,Basic Work Flow with MetaData 16,SidePanel_WorkflowDescription 16,http://172.10.0.152:5000/sharing/sXxbg1Ioe
+workflow17,https://chaenana.github.io/IIC-Test/Thumbs/Capture.PNG,description 17,Basic Work Flow with MetaData 17,SidePanel_WorkflowDescription 17,http://172.10.0.152:5000/sharing/sXxbg1Ioe

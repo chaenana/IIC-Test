@@ -34,7 +34,7 @@
     <div id="sidePanel">
         <h2 id="SidePanel_Title">새로운 화면</h2>
         <p id = "SidePanel_Description">여기는 오른쪽에서 밀고 들어오는 새로운 div입니다.</p>
-        <button class="download_sidePanel" onclick="window.open('http://172.10.0.152:5000/sharing/sXxbg1Ioe','_blank')">
+        <button id="download_sidePanel" onclick="window.open('http://172.10.0.152:5000/sharing/sXxbg1Ioe','_blank')">
                 Download WorkFlow
         </button>
         <button class="close-btn-sidePanel" onclick="closeSidePanel()">닫기</button>
@@ -63,7 +63,8 @@
                                 img_link: columns[1],  // 이미지 링크
                                 description: columns[2],  // Description
                                 title: columns[3],  // Title
-                                SidePanel_WorkflowDescription: columns[4] // SidePanel Workflow Descriptions
+                                SidePanel_WorkflowDescription: columns[4], // SidePanel Workflow Descriptions
+                                download_link: columns[5] //다운로드 링크
                             });
                         }
                     }
@@ -117,6 +118,7 @@
                 // 이미지 업데이트 (sidePanel 및 main grid 내의 이미지)
                 document.getElementById('sidePanel_img').src = workflow.img_link;
                 document.getElementById('SidePanel_Description').innerText = workflow.SidePanel_WorkflowDescription;
+                document.getElementById('download_sidePanel').onclick = () => window.open(workflow.link, '_blank'); // 링크 동작 설정
 
             } else {
                 document.getElementById('Description_Detail').innerText = 'No description available for this workflow.';
