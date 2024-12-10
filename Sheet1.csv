@@ -1,6 +1,6 @@
 ID,Img_link,description,Title,SidePanel_WorkflowDescription,download_link
 workflow1,https://chaenana.github.io/IIC-Test/Thumbs/BasicWorkflows.PNG,description 1,Basic Work Flow with MetaData,SidePanel_WorkflowDescription 1,http://172.10.0.152:5000/sharing/sXxbg1Ioe
-workflow2,https://chaenana.github.io/IIC-Test/Thumbs/ControlNet_Depth.JPG,description 2,ControlNet_Depth,SidePanel_WorkflowDescription 2,http://172.10.0.152:5000/sharing/gp7GQXvhL
+workflow2,https://chaenana.github.io/IIC-Test/Thumbs/ControlNet_Depth.PNG,description 2,ControlNet_Depth,SidePanel_WorkflowDescription 2,http://172.10.0.152:5000/sharing/gp7GQXvhL
 workflow3,https://chaenana.github.io/IIC-Test/Thumbs/BasicWorkflows.PNG,description 3,Basic Work Flow with MetaData 3,SidePanel_WorkflowDescription 3,http://172.10.0.152:5000/sharing/sXxbg1Ioe
 workflow4,https://chaenana.github.io/IIC-Test/Thumbs/BasicWorkflows.PNG,description 4,Basic Work Flow with MetaData 4,SidePanel_WorkflowDescription 4,http://172.10.0.152:5000/sharing/sXxbg1Ioe
 workflow5,https://chaenana.github.io/IIC-Test/Thumbs/BasicWorkflows.PNG,description 5,Basic Work Flow with MetaData 5,SidePanel_WorkflowDescription 5,http://172.10.0.152:5000/sharing/sXxbg1Ioe
