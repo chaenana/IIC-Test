@@ -1,9 +1,9 @@
 /* 기본 스타일 */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "DM Sans", serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background-color: #f3f6fd;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -12,11 +12,17 @@ body {
     flex-direction: column;
 }
 
-
+.header{
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    height: 72px;
+    width: 100%;
+}
 /* 햄버거 메뉴 */
 .hamburger-menu {
     position: absolute;
-    top: 50px;
+    top: 0px;
     left: 20px;
     display: flex;
     flex-direction: column;
@@ -27,12 +33,16 @@ body {
     z-index: 1000;
 }
 
+
 .hamburger-menu div {
     background-color: #333;
     height: 5px;
     width: 100%;
     border-radius: 5px;
 }
+
+
+
 
 /* 사이드바 초기 상태 */
 .sidebar {
@@ -80,17 +90,20 @@ body {
 
 /* title */
 .title {
-    font-size: 50px;
-    font-weight: bold;
-    text-align: center;
-    margin-top: 20px;  /* 제목과 그리드 사이의 여백 */
+    font-size: 30px;
+    font-weight: 700;
+    /* text-align: left; */
+    /* margin-left: 100px; */
+    margin-top: 40px;  /* 제목과 그리드 사이의 여백 */
     z-index: 500;
     width: 100%;
 }
 
 /* 그리드 컨테이너 */
 .grid-container {
+    background-color: #ffffff;
     display: grid;
+    border-radius:30px;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
     padding: 20px;
@@ -114,7 +127,7 @@ body {
     text-align: center;
     background: white;
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 30px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     cursor: pointer;
 }
@@ -148,7 +161,8 @@ body {
 
 
 .container-title {
-    font-size: 15px;
+    font-family: "DM Sans", serif;
+    font-size: 13px;
     font-weight: medium;
     text-align: center;
     margin-top: 5px; /* 이미지와 버튼 사이 간격 조정 */

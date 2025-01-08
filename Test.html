@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="teststyle.css" />
+    <title>AI R&D Testing Page</title>
+</head>
+<body>
+    <div class="app-container">
+        <div class="app-header">
+          <div class="app-header-left">
+            <span class="app-icon"></span>
+            <p class="app-name">AI R&D</p>
+          </div>
+
+          <div class="app-header-right">
+            <button class="mode-switch" title="Switch Theme">
+              <svg class="moon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="24" height="24" viewBox="0 0 24 24">
+                <defs></defs>
+                <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+              </svg>
+            </button>
+          </div>
+          <button class="messages-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-message-circle">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+            </svg>
+          </button>
+        </div>
+
+        
+        <div class="app-content">
+          <div class="app-sidebar">
+            <a href="" class="app-sidebar-link active">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+                <polyline points="9 22 9 12 15 12 15 22" />
+              </svg>
+            </a>
+            <a href="" class="app-sidebar-link">
+                <svg class="link-icon" xmlns="http://www.w3.org/2000/svg" id="Filled" viewBox="0 0 24 24" width="24" height="24">
+                 <path d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm3.222,7H8.778A19.614,19.614,0,0,1,12,2.412,19.57,19.57,0,0,1,15.222,7Zm.8,2a10.211,10.211,0,0,1,.476,3,10.211,10.211,0,0,1-.476,3H7.976A10.211,10.211,0,0,1,7.5,12a10.211,10.211,0,0,1,.476-3ZM9.4,2.356A19.676,19.676,0,0,0,6.574,7H3.353A10.031,10.031,0,0,1,9.4,2.356ZM2,12a9.986,9.986,0,0,1,.461-3H5.9a12.016,12.016,0,0,0-.4,3,12.016,12.016,0,0,0,.4,3H2.461A9.986,9.986,0,0,1,2,12Zm1.353,5H6.574A19.676,19.676,0,0,0,9.4,21.644,10.031,10.031,0,0,1,3.353,17Zm5.425,0h6.444A19.614,19.614,0,0,1,12,21.588,19.57,19.57,0,0,1,8.778,17Zm5.827,4.644A19.676,19.676,0,0,0,17.426,17h3.221A10.031,10.031,0,0,1,14.605,21.644ZM22,12a9.986,9.986,0,0,1-.461,3H18.1a12.016,12.016,0,0,0,.4-3,12.016,12.016,0,0,0-.4-3h3.437A9.986,9.986,0,0,1,22,12ZM17.426,7a19.676,19.676,0,0,0-2.821-4.644A10.031,10.031,0,0,1,20.647,7Z"/>
+                </svg>
+            </a>
+          </div>
+          
+          <div class="projects-section">
+            <div class="projects-section-header">
+              <p>WorkFlows</p>
+              <p class="time">December, 12</p>
+            </div>
+            <div class="projects-section-line">
+              <div class="projects-status">
+                <div class="item-status">
+                  <span class="status-number">45</span>
+                  <span class="status-type">In Progress</span>
+                </div>
+                <div class="item-status">
+                  <span class="status-number">24</span>
+                  <span class="status-type">Upcoming</span>
+                </div>
+                <div class="item-status">
+                  <span class="status-number">62</span>
+                  <span class="status-type">Total Projects</span>
+                </div>
+              </div>
+              <div class="view-actions">
+                <button class="view-btn list-view" title="List View">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-list">
+                    <line x1="8" y1="6" x2="21" y2="6" />
+                    <line x1="8" y1="12" x2="21" y2="12" />
+                    <line x1="8" y1="18" x2="21" y2="18" />
+                    <line x1="3" y1="6" x2="3.01" y2="6" />
+                    <line x1="3" y1="12" x2="3.01" y2="12" />
+                    <line x1="3" y1="18" x2="3.01" y2="18" />
+                  </svg>
+                </button>
+                <button class="view-btn grid-view active" title="Grid View">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-grid">
+                    <rect x="3" y="3" width="7" height="7" />
+                    <rect x="14" y="3" width="7" height="7" />
+                    <rect x="14" y="14" width="7" height="7" />
+                    <rect x="3" y="14" width="7" height="7" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            
+            <div class="project-boxes jsGridView">
+              <!-- <div class="project-box-wrapper">
+                <div class="project-box" style="background-color: #fee4cb;">
+                  <div class="project-box-header">
+                    <span class="Update-Date">December 10, 2020</span>
+                    <div class="more-wrapper">
+                      <button class="project-btn-more">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                          <circle cx="12" cy="12" r="1" />
+                          <circle cx="12" cy="5" r="1" />
+                          <circle cx="12" cy="19" r="1" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="project-box-content-header">
+                    <p class="box-content-header">Web Designing</p>
+                    <p class="box-content-subheader">Prototyping</p>
+                  </div>
+                  <div class="Thumbs">
+                    <img src="https://via.placeholder.com/600x400" style="width: 100%; background-color: #ff942e; border-radius: 10px;">
+                  </div>
+                  <div class="project-box-footer">
+                    <button class="Download-Btn" style="color: #ff942e;">View More</button>
+                  </div>
+                </div>
+              </div>
+              <div class="project-box-wrapper">
+                <div class="project-box" style="background-color: #e9e7fd;">
+                  <div class="project-box-header">
+                    <span>December 10, 2020</span>
+                    <div class="more-wrapper">
+                      <button class="project-btn-more">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                          <circle cx="12" cy="12" r="1" />
+                          <circle cx="12" cy="5" r="1" />
+                          <circle cx="12" cy="19" r="1" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="project-box-content-header">
+                    <p class="box-content-header">Testing</p>
+                    <p class="box-content-subheader">Prototyping</p>
+                  </div>
+                  <div class="Thumbs">
+                    <img src="https://via.placeholder.com/600x400" style="width: 100%; background-color: #ff942e; border-radius: 10px;">
+                  </div>
+                  <div class="project-box-footer">
+                    <button class="Download-Btn" style="color: #4f3ff0;">View More</button>
+                  </div>
+                </div>
+              </div>
+              <div class="project-box-wrapper">
+                <div class="project-box">
+                  <div class="project-box-header">
+                    <span>December 10, 2020</span>
+                    <div class="more-wrapper">
+                      <button class="project-btn-more">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                          <circle cx="12" cy="12" r="1" />
+                          <circle cx="12" cy="5" r="1" />
+                          <circle cx="12" cy="19" r="1" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="project-box-content-header">
+                    <p class="box-content-header">Svg Animations</p>
+                    <p class="box-content-subheader">Prototyping</p>
+                  </div>
+                  <div class="Thumbs">
+                    <img src="https://via.placeholder.com/600x400" style="width: 100%; background-color: #ff942e; border-radius: 10px;">
+                  </div>
+                  <div class="project-box-footer">
+                    <button class="Download-Btn" style="color: #096c86;">View More</button>
+                  </div>
+                </div>
+              </div>
+              <div class="project-box-wrapper">
+                <div class="project-box" style="background-color: #ffd3e2;">
+                  <div class="project-box-header">
+                    <span>December 10, 2020</span>
+                    <div class="more-wrapper">
+                      <button class="project-btn-more">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                          <circle cx="12" cy="12" r="1" />
+                          <circle cx="12" cy="5" r="1" />
+                          <circle cx="12" cy="19" r="1" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="project-box-content-header">
+                    <p class="box-content-header">UI Development</p>
+                    <p class="box-content-subheader">Prototyping</p>
+                  </div>
+                  <div class="Thumbs">
+                    <img src="https://via.placeholder.com/600x400" style="width: 100%; background-color: #ff942e; border-radius: 10px;">
+                  </div>
+                  <div class="project-box-footer">
+                    <button class="Download-Btn" style="color: #df3670;">View More</button>
+                  </div>
+                </div>
+              </div>
+              <div class="project-box-wrapper">
+                <div class="project-box" style="background-color: #c8f7dc;">
+                  <div class="project-box-header">
+                    <span>December 10, 2020</span>
+                    <div class="more-wrapper">
+                      <button class="project-btn-more">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                          <circle cx="12" cy="12" r="1" />
+                          <circle cx="12" cy="5" r="1" />
+                          <circle cx="12" cy="19" r="1" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="project-box-content-header">
+                    <p class="box-content-header">Data Analysis</p>
+                    <p class="box-content-subheader">Prototyping</p>
+                  </div>
+                  <div class="Thumbs">
+                    <img src="https://via.placeholder.com/600x400" style="width: 100%; background-color: #ff942e; border-radius: 10px;">
+                  </div>
+                  <div class="project-box-footer">
+                    <button class="Download-Btn" style="color: #34c471;">View More</button>
+                  </div>
+                </div>
+              </div>
+              <div class="project-box-wrapper">
+                <div class="project-box" style="background-color: #d5deff;">
+                  <div class="project-box-header">
+                    <span>December 10, 2020</span>
+                    <div class="more-wrapper">
+                      <button class="project-btn-more">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                          <circle cx="12" cy="12" r="1" />
+                          <circle cx="12" cy="5" r="1" />
+                          <circle cx="12" cy="19" r="1" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="project-box-content-header">
+                    <p class="box-content-header">Web Designing</p>
+                    <p class="box-content-subheader">Prototyping</p>
+                  </div>
+                  <div class="Thumbs">
+                    <img src="https://via.placeholder.com/600x400" style="width: 100%; background-color: #ff942e; border-radius: 10px;">
+                  </div>
+                  <div class="project-box-footer">
+                    <button class="Download-Btn" style="color: #4067f9;">View More</button>
+                  </div>
+                </div>
+              </div> -->
+            
+           
+           
+            </div>
+          </div>
+
+
+
+
+
+
+          <div class="messages-section">
+            <button class="messages-close">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
+                <circle cx="12" cy="12" r="10" />
+                <line x1="15" y1="9" x2="9" y2="15" />
+                <line x1="9" y1="9" x2="15" y2="15" />
+              </svg>
+            </button>
+            <div class="projects-section-header">
+              <p>Admin Messages</p>
+            </div>
+            <div class="messages">
+              <div class="message-box">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="profile image">
+                <div class="message-content">
+                  <div class="message-header">
+                    <div class="name">Stephanie</div>
+                    <div class="star-checkbox">
+                      <input type="checkbox" id="star-1">
+                      <label for="star-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                      </label>
+                    </div>
+                  </div>
+                  <p class="message-line">
+                    I got your first assignment. It was quite good. 🥳 We can continue with the next assignment.
+                  </p>
+                  <p class="message-line time">
+                    Dec, 12
+                  </p>
+                </div>
+              </div>
+              <div class="message-box">
+                <img src="https://images.unsplash.com/photo-1600486913747-55e5470d6f40?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80" alt="profile image">
+                <div class="message-content">
+                  <div class="message-header">
+                    <div class="name">Mark</div>
+                    <div class="star-checkbox">
+                      <input type="checkbox" id="star-2">
+                      <label for="star-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                      </label>
+                    </div>
+                  </div>
+                  <p class="message-line">
+                    Hey, can tell me about progress of project? I'm waiting for your response.
+                  </p>
+                  <p class="message-line time">
+                    Dec, 12
+                  </p>
+                </div>
+              </div>
+              <div class="message-box">
+                <img src="https://images.unsplash.com/photo-1543965170-4c01a586684e?ixid=MXwxMjA3fDB8MHxzZWFyY2h8NDZ8fG1hbnxlbnwwfDB8MHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="profile image">
+                <div class="message-content">
+                  <div class="message-header">
+                    <div class="name">David</div>
+                    <div class="star-checkbox">
+                      <input type="checkbox" id="star-3">
+                      <label for="star-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                      </label>
+                    </div>
+                  </div>
+                  <p class="message-line">
+                    Awesome! 🤩 I like it. We can schedule a meeting for the next one.
+                  </p>
+                  <p class="message-line time">
+                    Dec, 12
+                  </p>
+                </div>
+              </div>
+              <div class="message-box">
+                <img src="https://images.unsplash.com/photo-1533993192821-2cce3a8267d1?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTl8fHdvbWFuJTIwbW9kZXJufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=900&q=60" alt="profile image">
+                <div class="message-content">
+                  <div class="message-header">
+                    <div class="name">Jessica</div>
+                    <div class="star-checkbox">
+                      <input type="checkbox" id="star-4">
+                      <label for="star-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-star">
+                          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg>
+                      </label>
+                    </div>
+                  </div>
+                  <p class="message-line">
+                    I am really impressed! Can't wait to see the final result.
+                  </p>
+                  <p class="message-line time">
+                    Dec, 11
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        var modeSwitch = document.querySelector('.mode-switch');
+
+        modeSwitch.addEventListener('click', function ()
+        {                    
+            document.documentElement.classList.toggle('dark');
+            modeSwitch.classList.toggle('active');
+        });
+        
+        var listView = document.querySelector('.list-view');
+        var gridView = document.querySelector('.grid-view');
+        var projectsList = document.querySelector('.project-boxes');
+        
+        listView.addEventListener('click', function () {
+            gridView.classList.remove('active');
+            listView.classList.add('active');
+            projectsList.classList.remove('jsGridView');
+            projectsList.classList.add('jsListView');
+        });
+        
+        gridView.addEventListener('click', function () {
+            gridView.classList.add('active');
+            listView.classList.remove('active');
+            projectsList.classList.remove('jsListView');
+            projectsList.classList.add('jsGridView');
+        });
+        
+        document.querySelector('.messages-btn').addEventListener('click', function () {
+            document.querySelector('.messages-section').classList.add('show');
+        });
+        
+        document.querySelector('.messages-close').addEventListener('click', function() {
+            document.querySelector('.messages-section').classList.remove('show');
+        });
+        });
+
+        let workflowData = []; // CSV 데이터를 저장할 배열]
+        // 배경색 리스트 (4가지 색상 순환)
+        const colors = ["#fee4cb", "#e9e7fd", "#ffd3e2", "#c8f7dc"];
+        const Fontcolors = ["#ff942e", "#4f3ff0", "#df3670", "#34c471"];
+
+        function loadCSVData() 
+        {
+          fetch('https://chaenana.github.io/IIC-Test/Sheet1.csv') // CSV 파일 경로
+              .then(response => response.text())
+              .then(csvText => {
+                  const rows = csvText.split('\n').slice(1); // 첫 번째 줄(헤더) 제거
+                  workflowData = rows.map(row => {
+                      const columns = row.split(',');
+                      return {
+                          id: columns[0],
+                          img_link: columns[1],
+                          description: columns[2],
+                          title: columns[3],
+                          SidePanel_WorkflowDescription: columns[4],
+                          download_link: columns[5]
+                      };
+                  });
+                  createProjectBoxes(); // 데이터 기반 박스 생성
+              })
+              .catch(error => console.error('CSV 파일 로드 중 오류:', error));
+      }
+
+
+      // function createProjectBoxes() 
+      // {
+      //       const container = document.querySelector('.project-boxes');
+      //       container.innerHTML = ''; // 기존 내용을 비웁니다.
+      //       workflowData.forEach(item => {
+      //           const color = colors[index % colors.length];
+      //           const boxHTML = `
+      //               <div class="project-box-wrapper">
+      //                   <div class="project-box" style="background-color: ${color};">
+      //                       <div class="project-box-header">
+      //                           <span class="Update-Date">December 10, 2020</span>
+      //                           <div class="more-wrapper">
+      //                             <button class="project-btn-more">
+      //                               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+      //                                 <circle cx="12" cy="12" r="1" />
+      //                                 <circle cx="12" cy="5" r="1" />
+      //                                 <circle cx="12" cy="19" r="1" />
+      //                               </svg>
+      //                             </button>
+      //                           </div>
+      //                       </div>
+      //                       <div class="project-box-content-header">
+      //                           <p class="box-content-header">${item.title}</p>
+      //                           <p class="box-content-subheader">${item.description}</p>
+      //                       </div>
+      //                       <div class="Thumbs">
+      //                           <img src="${item.img_link}" style="width: 100%; border-radius: 10px;">
+      //                       </div>
+      //                       <div class="project-box-footer">
+      //                           <button class="Download-Btn" onclick="window.open('${item.download_link}', '_blank')">View More</button>
+      //                       </div>
+      //                   </div>
+      //               </div>
+      //           `;
+      //           container.innerHTML += boxHTML; // DOM에 추가
+      //       });
+      // }
+
+
+      function createProjectBoxes() {
+        const container = document.querySelector('.project-boxes');
+        container.innerHTML = ''; // 기존 내용을 비우기
+
+        workflowData.forEach((item, index) => { // `index` 추가
+            const color = colors[index % colors.length]; // `index` 사용해 색상 순환
+            const FontColor = Fontcolors[index % colors.length]; // `index` 사용해 색상 순환
+
+            const boxHTML = `
+                <div class="project-box-wrapper">
+                    <div class="project-box" style="background-color: ${color};">
+                        <div class="project-box-header">
+                            <span class="Update-Date">December 10, 2020</span>
+                            <div class="more-wrapper">
+                              <button class="project-btn-more">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-vertical">
+                                  <circle cx="12" cy="12" r="1" />
+                                  <circle cx="12" cy="5" r="1" />
+                                  <circle cx="12" cy="19" r="1" />
+                                </svg>
+                              </button>
+                            </div>
+                        </div>
+                        <div class="project-box-content-header">
+                            <p class="box-content-header">${item.title}</p>
+                            <p class="box-content-subheader">${item.description}</p>
+                        </div>
+                        <div class="Thumbs">
+                            <img src="${item.img_link}" style="width: 100%; border-radius: 10px;">
+                        </div>
+                        <div class="project-box-footer">
+                            <button class="Download-Btn" onclick="window.open('${item.download_link}', '_blank')" style="color: ${FontColor};">Download Workflow</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            container.innerHTML += boxHTML; // DOM에 추가
+        });
+    }
+
+
+
+      // 페이지 로드 시 CSV 데이터 불러오기
+      document.addEventListener('DOMContentLoaded', loadCSVData);
+
+
+      </script>
+
+</body>
+</html>
