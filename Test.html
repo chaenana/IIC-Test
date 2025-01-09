@@ -25,32 +25,9 @@
           </svg>
         </button>
       </div>
-      <button class="messages-btn">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-          stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-          class="feather feather-message-circle">
-          <path
-            d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-        </svg>
-      </button>
     </div>
 
-
     <div class="app-content">
-
-      <div class="Room-section">
-        <div class="projects-section-header">
-          <p>Room</p>
-          </div>
-          <div class="Rooms">
-            <div class="Rooms-box">
-              <p class="Room-Num">Room Num</p>
-              <button class="Room-enterBtn" onclick="window.open('', '_blank')">Enter Room</button>
-            </div>
-        </div>
-      </div>
-
-
       <div class="projects-section">
         <div class="projects-section-header">
           <p>WorkFlows</p>
@@ -63,284 +40,75 @@
               <span class="status-type">Total Projects</span>
             </div>
           </div>
-          <div class="view-actions">
-            <button class="view-btn list-view" title="List View">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="feather feather-list">
-                <line x1="8" y1="6" x2="21" y2="6" />
-                <line x1="8" y1="12" x2="21" y2="12" />
-                <line x1="8" y1="18" x2="21" y2="18" />
-                <line x1="3" y1="6" x2="3.01" y2="6" />
-                <line x1="3" y1="12" x2="3.01" y2="12" />
-                <line x1="3" y1="18" x2="3.01" y2="18" />
-              </svg>
-            </button>
-            <button class="view-btn grid-view active" title="Grid View">
-              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                class="feather feather-grid">
-                <rect x="3" y="3" width="7" height="7" />
-                <rect x="14" y="3" width="7" height="7" />
-                <rect x="14" y="14" width="7" height="7" />
-                <rect x="3" y="14" width="7" height="7" />
-              </svg>
-            </button>
-          </div>
         </div>
 
         <div class="project-boxes jsGridView">
-          <!-- 워크플로우 패널이 자동으로 생성됨 -->
+          <!-- Workflows will be added here -->
         </div>
       </div>
-
-
-
-      <div class="messages-section">
-        <button class="messages-close">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="feather feather-x-circle">
-            <circle cx="12" cy="12" r="10" />
-            <line x1="15" y1="9" x2="9" y2="15" />
-            <line x1="9" y1="9" x2="15" y2="15" />
-          </svg>
-        </button>
-        <div class="projects-section-header">
-          <p>Admin Messages</p>
-        </div>
-        <div class="messages">
-          <!-- admin message 자동으로 생성됨 -->
-        </div>
-      </div>
-
     </div>
   </div>
-  </div>
-
 
   <script>
-
-    // 페이지 로드 시 CSV 데이터 불러오기
-    document.addEventListener('DOMContentLoaded', loadCSVData);
-    document.addEventListener('DOMContentLoaded', loadAdminComment);
-
-    document.addEventListener('DOMContentLoaded', function () {
-      var modeSwitch = document.querySelector('.mode-switch');
-
-      modeSwitch.addEventListener('click', function () {
-        document.documentElement.classList.toggle('dark');
-        modeSwitch.classList.toggle('active');
-      });
-
-      var listView = document.querySelector('.list-view');
-      var gridView = document.querySelector('.grid-view');
-      var projectsList = document.querySelector('.project-boxes');
-
-      listView.addEventListener('click', function () {
-        gridView.classList.remove('active');
-        listView.classList.add('active');
-        projectsList.classList.remove('jsGridView');
-        projectsList.classList.add('jsListView');
-      });
-
-      gridView.addEventListener('click', function () {
-        gridView.classList.add('active');
-        listView.classList.remove('active');
-        projectsList.classList.remove('jsListView');
-        projectsList.classList.add('jsGridView');
-      });
-
-      document.querySelector('.messages-btn').addEventListener('click', function () {
-        document.querySelector('.messages-section').classList.add('show');
-      });
-
-      document.querySelector('.messages-close').addEventListener('click', function () {
-        document.querySelector('.messages-section').classList.remove('show');
-      });
-    });
-
-    let workflowData = []; // CSV 데이터를 저장할 배열]
-    // 배경색 리스트 (4가지 색상 순환)
     const colors = ["#fee4cb", "#e9e7fd", "#ffd3e2", "#c8f7dc"];
     const Fontcolors = ["#ff942e", "#4f3ff0", "#df3670", "#34c471"];
+    const workflowCsvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRJGZN0T8x9pb3a1O3iC0v310lKYgEKVMPyCrPiAvZQViLlMcHLYzcOhyfs0-8W04dq3aSwlA5nPK_o/pub?gid=0&single=true&output=csv';
 
-
+    document.addEventListener('DOMContentLoaded', function () {
+      loadCSVData();
+    });
 
     function loadCSVData() {
-      fetch('https://chaenana.github.io/IIC-Test/Sheet1.csv') // CSV 파일 경로
-        .then(response => response.text())
-        .then(csvText => {
-          const rows = csvText.split('\n').slice(1); // 첫 번째 줄(헤더) 제거
-          console.log(`Total rows (excluding header): ${rows.length}`); // 로그로 총 row 개수 출력
-          const rowCount = rows.length;
-
-          // status-number 클래스 요소 업데이트
-          const statusNumberElement = document.querySelector('.status-number');
-          if (statusNumberElement) {
-            statusNumberElement.innerText = rowCount; // 행 개수를 status-number에 삽입
+      fetch(workflowCsvUrl, { mode: 'cors' })
+        .then(response => {
+          if (response.redirected) {
+            return fetch(response.url);
           }
-
-
-          workflowData = rows.map(row => {
+          return response.text();
+        })
+        .then(csvText => {
+          const rows = csvText.split('\n').slice(1);
+          const workflowData = rows.map(row => {
             const columns = row.split(',');
             return {
               id: columns[0],
               img_link: columns[1],
               description: columns[2],
               title: columns[3],
-              SidePanel_WorkflowDescription: columns[4],
-              download_link: columns[5],
-              Update_date: columns[6]
+              download_link: columns[4],
+              Update_date: columns[5]
             };
           });
-          createProjectBoxes(); // 데이터 기반 박스 생성
+          createProjectBoxes(workflowData);
         })
         .catch(error => console.error('CSV 파일 로드 중 오류:', error));
     }
 
-    // // CSV 데이터 로드
-    // function loadRoomLinks() {
-    //   fetch('https://chaenana.github.io/IIC-Test/rooms.csv') // CSV 파일 경로
-    //     .then(response => response.text())
-    //     .then(text => {
-    //       const rows = text.split('\n');
-    //       for (let i = 1; i < rows.length; i++) {
-    //         const columns = rows[i].split(',');
-    //         if (columns.length >= 3) {
-    //           roomLinks.push({
-    //             id: columns[0],   // room ID
-    //             link: columns[1], // 링크 URL
-    //             title: columns[2] // 링크 제목
-    //           });
-    //         }
-    //       }
-    //     })
-    //     .catch(error => console.error('Error loading room links: ', error));
-    // }
-
-// Rooms 데이터를 저장할 배열
-let roomData = [];
-
-// CSV 데이터 로드 함수
-function loadRoomLinks() {
-  fetch('https://chaenana.github.io/IIC-Test/rooms.csv') // CSV 파일 경로
-    .then(response => response.text())
-    .then(text => {
-      const rows = text.split('\n').slice(1); // 첫 번째 줄(헤더) 제거
-      roomData = rows.map(row => {
-        const columns = row.split(',');
-        return {
-          id: columns[0],   // Room ID
-          link: columns[1], // 링크 URL
-          title: columns[2] // 링크 제목
-        };
-      }).filter(item => item.id && item.link && item.title); // 빈 값 제거
-      createRoomBoxes(); // Rooms-box 생성
-    })
-    .catch(error => console.error('Error loading room links:', error));
-}
-
-// Rooms-box 생성 함수
-function createRoomBoxes() {
-  const roomContainer = document.querySelector('.Rooms'); // Rooms 컨테이너 선택
-  roomContainer.innerHTML = ''; // 기존 내용 초기화
-
-  roomData.forEach((room) => {
-    const roomBoxHTML = `
-      <div class="Rooms-box">
-        <p class="room-title">${room.title}</p>
-        <button class="Room-enterBtn" onclick="window.open('${room.link}', '_blank')">Enter Room</button>
-
-      </div>
-    `;
-    roomContainer.innerHTML += roomBoxHTML; // DOM 업데이트
-  });
-}
-
-// 페이지 로드 시 데이터 로드
-document.addEventListener('DOMContentLoaded', loadRoomLinks);
-
-    function loadAdminComment() {
-      fetch('https://chaenana.github.io/IIC-Test/AdminComment.csv') // CSV 파일 경로
-        .then(response => response.text())
-        .then(text => {
-          const rows = text.split('\n').slice(1); // 첫 번째 줄(헤더) 제거
-          const adminComments = rows.map(row => {
-            const columns = row.split(',');
-            if (columns.length >= 4) {
-              return {
-                id: columns[0],          // row ID
-                admin_id: columns[1],    // 관리자 ID
-                comment: columns[2],     // 댓글 내용
-                date: columns[3]         // 날짜
-              };
-            }
-          }).filter(item => item); // null 값 제거
-          createMessageBoxes(adminComments); // 메시지 박스 생성
-        })
-        .catch(error => console.error('Error loading Admin Comment:', error));
-    }
-
-
-
-    function createMessageBoxes(comments) {
-      const messageContainer = document.querySelector('.messages'); // 메시지 박스 컨테이너
-      messageContainer.innerHTML = ''; // 기존 메시지 박스 비우기
-
-      comments.forEach(comment => {
-        const formattedDate = formatDate(comment.date); // 날짜 포맷 변환
-        const messageBoxHTML = `
-        <div class="message-box">
-          <img src="https://via.placeholder.com/50" alt="profile image"> <!-- 기본 프로필 이미지 -->
-          <div class="message-content">
-            <div class="message-header">
-              <div class="name">${comment.admin_id}</div> <!-- 관리자 ID -->
-            </div>
-            <p class="message-line">${comment.comment}</p> <!-- 댓글 내용 -->
-            <p class="message-line time">${formattedDate}</p> <!-- 댓글 날짜 -->
-          </div>
-        </div>
-      `;
-        messageContainer.innerHTML += messageBoxHTML; // DOM 업데이트
-      });
-    }
-
-    function formatDate(dateString) {
-      const date = new Date(dateString); // 날짜 문자열을 Date 객체로 변환
-      const options = { year: 'numeric', month: 'long', day: 'numeric' }; // 날짜 형식 옵션
-      return date.toLocaleDateString('en-US', options); // "January 1, 2025" 형식
-    }
-
-    function createProjectBoxes() {
+    function createProjectBoxes(workflowData) {
       const container = document.querySelector('.project-boxes');
-      container.innerHTML = ''; // 기존 내용을 비우기
-
-      workflowData.forEach((item, index) => { // `index` 추가
-        const color = colors[index % colors.length]; // `index` 사용해 색상 순환
-        const FontColor = Fontcolors[index % colors.length]; // `index` 사용해 색상 순환
-        const formattedDate = formatDate(item.Update_date); // 날짜 포맷 변환
-
+      container.innerHTML = '';
+      workflowData.forEach((item, index) => {
+        const color = colors[index % colors.length];
+        const FontColor = Fontcolors[index % colors.length];
         const boxHTML = `
-                <div class="project-box-wrapper">
-                    <div class="project-box" style="background-color: ${color};">
-                        <div class="project-box-header">
-                            <span class="Update-Date">${formattedDate}</span>
-                        </div>
-                        <div class="project-box-content-header">
-                            <p class="box-content-header">${item.title}</p>
-                            <p class="box-content-subheader">${item.description}</p>
-                        </div>
-                        <div class="Thumbs">
-                            <img src="${item.img_link}" style="width: 100%; border-radius: 10px;">
-                        </div>
-                        <div class="project-box-footer">
-                            <button class="Download-Btn" onclick="window.open('${item.download_link}', '_blank')" style="color: ${FontColor};">Download Workflow</button>
-                        </div>
-                    </div>
-                </div>
-            `;
-        container.innerHTML += boxHTML; // DOM에 추가
+          <div class="project-box-wrapper">
+            <div class="project-box" style="background-color: ${color};">
+              <div class="project-box-header">
+                <span class="Update-Date">${item.Update_date}</span>
+              </div>
+              <div class="project-box-content-header">
+                <p class="box-content-header">${item.title}</p>
+                <p class="box-content-subheader">${item.description}</p>
+              </div>
+              <div class="Thumbs">
+                <img src="${item.img_link}" style="width: 100%; border-radius: 10px;">
+              </div>
+              <div class="project-box-footer">
+                <button class="Download-Btn" onclick="window.open('${item.download_link}', '_blank')" style="color: ${FontColor};">Download Workflow</button>
+              </div>
+            </div>
+          </div>`;
+        container.innerHTML += boxHTML;
       });
     }
   </script>
