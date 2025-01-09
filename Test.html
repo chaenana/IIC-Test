@@ -41,12 +41,12 @@
       <div class="Room-section">
         <div class="projects-section-header">
           <p>Room</p>
+        </div>
+        <div class="Rooms">
+          <div class="Rooms-box">
+            <p class="Room-Num">Room Num</p>
+            <button class="Room-enterBtn" onclick="window.open('', '_blank')">Enter Room</button>
           </div>
-          <div class="Rooms">
-            <div class="Rooms-box">
-              <p class="Room-Num">Room Num</p>
-              <button class="Room-enterBtn" onclick="window.open('', '_blank')">Enter Room</button>
-            </div>
         </div>
       </div>
 
@@ -120,10 +120,50 @@
 
 
   <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var modeSwitch = document.querySelector('.mode-switch');
+
+      modeSwitch.addEventListener('click', function () {
+        document.documentElement.classList.toggle('dark');
+        modeSwitch.classList.toggle('active');
+      });
+
+      var listView = document.querySelector('.list-view');
+      var gridView = document.querySelector('.grid-view');
+      var projectsList = document.querySelector('.project-boxes');
+
+      listView.addEventListener('click', function () {
+        gridView.classList.remove('active');
+        listView.classList.add('active');
+        projectsList.classList.remove('jsGridView');
+        projectsList.classList.add('jsListView');
+      });
+
+      gridView.addEventListener('click', function () {
+        gridView.classList.add('active');
+        listView.classList.remove('active');
+        projectsList.classList.remove('jsListView');
+        projectsList.classList.add('jsGridView');
+      });
+
+      document.querySelector('.messages-btn').addEventListener('click', function () {
+        document.querySelector('.messages-section').classList.add('show');
+      });
+
+      document.querySelector('.messages-close').addEventListener('click', function () {
+        document.querySelector('.messages-section').classList.remove('show');
+      });
+    });
+
+
+
+
+
     const colors = ["#fee4cb", "#e9e7fd", "#ffd3e2", "#c8f7dc"];
     const Fontcolors = ["#ff942e", "#4f3ff0", "#df3670", "#34c471"];
     const workflowCsvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRJGZN0T8x9pb3a1O3iC0v310lKYgEKVMPyCrPiAvZQViLlMcHLYzcOhyfs0-8W04dq3aSwlA5nPK_o/pub?gid=0&single=true&output=csv';
-    
+
     document.addEventListener('DOMContentLoaded', function () {
       loadCSVData();
     });
