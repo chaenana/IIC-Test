@@ -123,7 +123,7 @@
     const colors = ["#fee4cb", "#e9e7fd", "#ffd3e2", "#c8f7dc"];
     const Fontcolors = ["#ff942e", "#4f3ff0", "#df3670", "#34c471"];
     const workflowCsvUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRJGZN0T8x9pb3a1O3iC0v310lKYgEKVMPyCrPiAvZQViLlMcHLYzcOhyfs0-8W04dq3aSwlA5nPK_o/pub?gid=0&single=true&output=csv';
-
+    
     document.addEventListener('DOMContentLoaded', function () {
       loadCSVData();
     });
@@ -168,14 +168,13 @@
       const container = document.querySelector('.project-boxes');
       container.innerHTML = '';
       workflowData.forEach((item, index) => {
-        const formattedDate = formatDate(comment.date); // 날짜 포맷 변환
         const color = colors[index % colors.length];
         const FontColor = Fontcolors[index % colors.length];
         const boxHTML = `
           <div class="project-box-wrapper">
             <div class="project-box" style="background-color: ${color};">
               <div class="project-box-header">
-                <span class="Update-Date">${formattedDate}</span>
+                <span class="Update-Date">${item.Update_date}</span>
               </div>
               <div class="project-box-content-header">
                 <p class="box-content-header">${item.title}</p>
@@ -192,15 +191,6 @@
         container.innerHTML += boxHTML;
       });
     }
-
-
-    function formatDate(dateString) {
-      const date = new Date(dateString); // 날짜 문자열을 Date 객체로 변환
-      const options = { year: 'numeric', month: 'long', day: 'numeric' }; // 날짜 형식 옵션
-      return date.toLocaleDateString('en-US', options); // "January 1, 2025" 형식
-    }
-
-
   </script>
 
 </body>
