@@ -121,6 +121,12 @@
 
   <script>
 
+    let workflowData = []; // CSV 데이터를 저장할 배열]
+    // 배경색 리스트 (4가지 색상 순환)
+    const colors = ["#fee4cb", "#e9e7fd", "#ffd3e2", "#c8f7dc"];
+    const Fontcolors = ["#ff942e", "#4f3ff0", "#df3670", "#34c471"];
+
+
     // 페이지 로드 시 CSV 데이터 불러오기
     document.addEventListener('DOMContentLoaded', loadCSVData);
     document.addEventListener('DOMContentLoaded', loadAdminComment);
@@ -160,10 +166,10 @@
       });
     });
 
-    let workflowData = []; // CSV 데이터를 저장할 배열]
-    // 배경색 리스트 (4가지 색상 순환)
-    const colors = ["#fee4cb", "#e9e7fd", "#ffd3e2", "#c8f7dc"];
-    const Fontcolors = ["#ff942e", "#4f3ff0", "#df3670", "#34c471"];
+
+
+    
+
 
 
 
