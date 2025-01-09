@@ -61,27 +61,37 @@
     function loadCSVData() {
       fetch(workflowCsvUrl, { mode: 'cors' })
         .then(response => {
-          if (response.redirected) {
-            return fetch(response.url);
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
           }
           return response.text();
         })
         .then(csvText => {
+          if (typeof csvText !== 'string') {
+            console.error('CSV 데이터가 문자열이 아닙니다:', csvText);
+            throw new TypeError('csvText is not a string');
+          }
           const rows = csvText.split('\n').slice(1);
           const workflowData = rows.map(row => {
             const columns = row.split(',');
+            if (columns.length < 5) {
+              console.warn('잘못된 행이 발견되었습니다:', row);
+              return null;
+            }
             return {
               id: columns[0],
               img_link: columns[1],
               description: columns[2],
               title: columns[3],
               download_link: columns[4],
-              Update_date: columns[5]
+              Update_date: columns[5] || 'N/A'
             };
-          });
+          }).filter(item => item !== null);
           createProjectBoxes(workflowData);
         })
-        .catch(error => console.error('CSV 파일 로드 중 오류:', error));
+        .catch(error => {
+          console.error('CSV 파일 로드 중 오류:', error);
+        });
     }
 
     function createProjectBoxes(workflowData) {
