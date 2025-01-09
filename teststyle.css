@@ -67,10 +67,11 @@ button, a {
   width: 100%;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 95%;
   background-color: var(--app-container);
   transition: 0.2s;
   max-width: 1800px;
+
 }
 .app-container button, .app-container input, .app-container optgroup, .app-container select, .app-container textarea {
   font-family: "DM Sans", sans-serif;
@@ -80,7 +81,7 @@ button, a {
     display: flex;
     flex-wrap: wrap; /* 섹션을 줄바꿈 가능하도록 */
     gap: 16px; /* 섹션 간격 */
-    padding: 16px 24px 24px 0;
+    padding: 16px 24px 24px 24px;
     height: 100%;
   }
   
@@ -255,11 +256,11 @@ button, a {
     flex-shrink: 0;
     padding-bottom: 32px;
     background-color: var(--projects-section);
-    margin-left: 24px;
-    margin-bottom: 24px;
+    /* margin-left: 24px; */
+    /* margin-bottom: 24px; */
     flex: 1;
     width: 100%;
-    /* height: 50%; */
+    height: 100%;
     border-radius: 30px;
     position: relative;
     overflow: auto;
@@ -284,30 +285,32 @@ button, a {
   .Rooms-box {
     display: block; /* flex 초기화하여 block 형태로 설정 */
     /* border: 1px solid var(--message-box-border); */
-    padding: 16px;
-    background-color: #f1f1f173;
+    padding: 25px;
+    background-color: #fff9ca;
     width: 90%; /* 부모의 너비를 채움 */
-    border-radius: 10px;
+    border-radius: 20px;
     margin-left: auto;
     margin-right: auto;
     /* background-color: var(--projects-section); */
     transition: background-color 0.3s ease;
   }
   
-  .Rooms-box:hover {
-    background-color: var(--message-box-hover); /* Hover 시 배경색 */
-  }
+  .Room-enterBtn:hover {
+    background-color: rgba(255, 200, 137, 0.598); /* Hover 시 배경색 */
+    color:#635115;
+}
   
   .Rooms-box p {
     margin: 0;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 600;
     color: var(--main-color);
   }
   
   .Room-enterBtn {
-    /* background-color: rgba(255, 255, 255, 0.6); */
+    background-color: rgba(255, 136, 0, 0.598);
     font-size: 12px;
+    color:  #ffffff;
     border-radius: 20px;
     border-style: none;
     flex-shrink: 0;
@@ -329,10 +332,8 @@ button, a {
   padding-bottom: 32px;
   background-color: var(--projects-section);
   margin-left: 24px;
-  margin-bottom: 24px;
   flex: 1;
   width: 100%;
-  /* height: 50%; */
   border-radius: 30px;
   position: relative;
   overflow: auto;
